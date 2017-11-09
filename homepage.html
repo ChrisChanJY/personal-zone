@@ -1,0 +1,191 @@
+<!DOCTYPE html><head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" / >
+	<link href="homepage.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<title>HomePage</title>
+
+
+<script src="https://unpkg.com/vue"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-with-addons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<br>
+<div id="container"></div>
+<script type="text/jsx">
+        class PageVisited extends React.Component{
+            constructor(props){
+                super(props);
+                var pageVisited = false;
+                if(!localStorage.ppageVisited){
+                    pageVisited = true;
+                        localStorage.ppageVisited = JSON.stringify(pageVisited);
+            }
+
+            this.state= {isVisited:pageVisited };
+        }
+        
+       
+        componentDidMount(){
+        console.log(performance.now() + "dids mount");
+    }
+
+        render(){
+            return <b>欢迎{this.state.isVisited?"":"再次"}查看我的简历！+{this.props.name}</b>;
+        }
+    }
+    ReactDOM.render(
+        <PageVisited name="user"/>,
+        document.getElementById('container')
+    );
+        </script>
+<script type="text/jsx">
+var HelloComponent=React.createClass({
+	render:function(){
+	  return(<h1>Hello.React</h1>);
+	}
+});
+</script>
+<div class="navbar">
+	<ul>
+		<li><div id="b1"><a href="#bt1">首页</a></div></li>
+		<li><div id="b2"><a href="#bt2">学历</a></div></li>
+		<li><div id="b3"><a href="#bt3">实践经历</a></div></li>
+		<li><div id="b4"><a href="#bt4">作品</a></div></li>
+		<li><div id="b5"><a href="#bt5">生活</a></div></li>
+	</ul>
+</div>
+<main>
+	
+
+    <blockquote>
+    	<img src="images/icon.jpg" width=150 height=150 onMouseover="this.width=170; this.height=170" onMouseout="this.width=150;this.height=150" title="我是头像">
+    	<a href="">Hello!</a>
+    	<p>
+    		It's My personal information!
+    	</p>
+    <!-- <div id="b1">
+       <p>
+        “夕阳无限好　天色已黄昏
+		本想去凭爱　去换最灿烂一生
+		想不到长吻　带来更永恒伤感
+		夕阳无限好　却是近黄昏
+		高峰的快感　刹那失憾
+		风花雪月不肯等人 要献便献吻
+		好风景多的是　夕阳平常事
+		然而每天眼见的　永远不相似” </p>
+        <footer>--
+            <cite>
+                摘选 林夕《夕阳无限好》
+            </cite>
+        </footer>
+      </div>  -->
+ 
+    </blockquote>
+</main>
+<!-- <div id="#b1" style="width:16rem;height:16rem;color:#95EB15">学历</div> -->
+<!-- <div id="detail">
+<details id="bt2">
+	<summary>学历</summary>
+	<ol id="content1">		
+		<li>09/01/2015-07/01/2018 <a href="http://www.gdqy.edu.cn/">广东轻工职业技术学院</a></li>
+		<li>09/01/2012-07/01/2015 <a href="http://www.zhyz.net.cn/index.do">珠海市第一中等职业技术学校</a></li>
+		<li>09/01/2009-07/01/2012 <a href="https://baike.baidu.com/item/%E7%8F%A0%E6%B5%B7%E5%B8%82%E7%AC%AC%E5%8D%81%E4%B8%AD%E5%AD%A6/13842576?fr=aladdin">珠海市第十中学</a></li>
+		
+	</ol>
+</details>
+<details id="bt3">
+	<summary>实践经历</summary>
+	<p>121321323</p>
+</details>
+<details id="bt4">
+	<summary>作品</summary>
+	<p>121321323</p>
+</details>
+<details id="bt5">
+	<summary>生活</summary>
+	<p>121321323</p>
+</details>
+
+</div> -->
+<section id="container">
+	<h3>项目历练</h3>
+	<div>
+	<input type="checkbox" id="2017" value="2017" v-model="checkedYears" v-on:change="filterByYear">
+	<label for="2017">2017</label>
+	<br>
+	<input type="checkbox" id="2016" value="2016" v-model="checkedYears" v-on:change="filterByYear">
+	<label for="2016">2016</label>
+	<br>
+    </div>
+	<ul id="project-list">
+		<li v-for="item in projects" key="item.time">
+			<p>{{item.time}}</p>
+			<p>{{item.name}}</p>
+			<p>{{item.tech}}</p>
+			<p>{{item.detail}}</p>
+		</li>
+	</ul>
+</section>
+<script type="text/javascript">
+	var projectList = new Vue({
+		el:'#project-list',
+		data:{
+			projects:[
+			{
+			 time :"2017.9-2017.11",
+			 name:"电子简历",
+			 tech:"1233",
+			 detail:"4546"
+			},
+			{
+			 time :"2017.9-2017.11",
+			 name:"电子简历",
+			 tech:"56576",
+			 detail:"767"
+			}
+			],
+
+			visibleProjects:[
+			{
+			 time :"2017.9-2017.11",
+			 name:"电子简历",
+			 tech:"1233",
+			 detail:"4546"
+			},
+			{
+			 time :"2017.9-2017.11",
+			 name:"电子简历",
+			 tech:"56576",
+			 detail:"767"
+			}
+			],
+			checkedYears:[]
+	},
+	methods: {
+		filterByYear:function(value){
+			this.visibleProjects=[];
+
+			for (var i = 0; i < this.projects.length;i++) {
+			var item = this.projects[i];
+
+			    for (var j = 0;j<checkedYears.length; j++) {
+			        value = this.checkedYears[j];
+			
+                   if (item.time.indexOf(value) >= 0) {
+				     this.visibleProjects.push(item);
+
+				     break;
+
+				     }
+			}
+		}
+		return this.visibleProjects;
+	}
+	}
+
+	})
+</script>
+</body>
+</html>

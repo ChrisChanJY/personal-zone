@@ -1,0 +1,160 @@
+<style>
+*{
+	padding:0;
+	margin:0;
+	}
+body {
+	color:#fff;
+	box-sizing: border-box;
+	margin: 20px;
+}
+.navbar {
+	padding-top:4em;
+    text-align:center;
+}
+.navbar a{
+	text-decoration: none;
+	color: #fff;
+	font-family: "黑体";
+	font-weight: bold;
+}
+.navbar a:hover{
+	color:#000;
+}
+.navbar ul {
+    display:inline-block;
+    zoom:1;
+}
+.navbar li {
+    float:left;
+    list-style: none;
+}
+.navbar li + li {
+    margin-left:80px;
+}
+body, main::before {
+	background:url("images/banner.jpg");
+	background-size:140% 150%;
+/*	linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+	linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+	background-color:#708090;
+	background-size: 64px 128px; //方格背景（复制链接）*/
+	}
+main {
+	clear: both;
+	margin-top: 4em;
+	position: relative;
+/*	margin: 0 auto;//毛玻璃水平居中*/
+	padding: 1em;
+	max-width: 50em;
+	max-height: 60em;
+	background: hsla(84, 50%, 50%, .10) border-box;
+	overflow: hidden;
+	box-shadow: /*0 0 0 1px hsla(0,0%,100%,.3) inset,//毛玻璃边框*/
+	            0 .5em 1em rgba(0, 0, 0, 0.6);
+/*	text-shadow: 0 1px 1px hsla(0,0%,100%,.3);//文字阴影*/
+	
+}
+
+main::before {
+	content: '';
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: -30px;
+	z-index: -1;
+	-webkit-filter: blur(15px);
+	filter: blur(10px);
+	background-attachment: fixed;
+}
+
+blockquote p{
+	font-size: 2em;
+	margin-left: 7em;
+	color: white;
+}
+blockquote a{
+	margin-left: 1em;
+	font-size: 4em;
+	color: white;
+	text-decoration: none;
+}
+blockquote a:hover{
+	font-size: 5em;
+}
+blockquote cite { font-style: normal; }
+#b1 {
+     background: #58a;
+	-webkit-clip-path: 
+		polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+		calc(100% - 20px) 100%,
+		20px 100%, 0 calc(100% - 20px), 0 20px);
+	clip-path:
+	 		polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+	 		calc(100% - 20px) 100%,
+	 		20px 100%, 0 calc(100% - 20px), 0 20px);
+	
+	padding: 0.5em 1.5em;
+	max-width: 36em;
+	color: white;
+	font: 150%/1.6 Baskerville, Palatino, serif;
+}
+#b2{
+	background: #58a;
+	background:	radial-gradient(circle at top left, transparent 25px, #58a 0) /*top left,
+	            radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+	            radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+	            radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left*/;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+	padding: 0.5em 1.5em;
+	max-width: 36em;
+	color: white;
+	font: 150%/1.6 Baskerville, Palatino, serif;
+}
+#b3{
+	background: #58a;
+	background:  radial-gradient(circle at top right, transparent 15px, #58a 0);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 0.5em 1.5em;
+	max-width: 36em;
+	color: white;
+	font: 150%/1.6 Baskerville, Palatino, serif;
+}
+#b4{
+	background: #58a;
+	background: radial-gradient(circle at bottom right, transparent 15px, #58a 0);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 0.5em 1.5em;
+	max-width: 36em;
+	color: white;
+	font: 150%/1.6 Baskerville, Palatino, serif;
+}
+#b5{
+	background: #58a;
+	background:	radial-gradient(circle at bottom left, transparent 15px, #58a 0);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+	padding: 0.5em 1.5em;
+	max-width: 36em;
+	color: white;
+	font: 150%/1.6 Baskerville, Palatino, serif;
+}
+summary{
+	color: white;
+	font-size: 1.5rem;
+	font-family: "微软雅黑";
+}
+details{
+	margin:4rem;
+}
+#content1 li{
+	background-color: #fff;
+	border-radius: 10px;
+	margin-top: 10px;
+	width: 50%;
+}
+</style>
